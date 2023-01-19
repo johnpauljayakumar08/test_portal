@@ -1,24 +1,27 @@
-import logo from './logo.svg';
+import Login from './components/login-page';
+import Otp from './components/otp';
+import {BrowserRouter,Routes,Route} from 'react-router-dom';
+import Test from './components/test';
+import { Easy } from './components/easy';
+import { Modurate } from './components/modurate';
+import { Advance } from './components/advance';
+import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
-
+import { Header } from './components/header';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+   <BrowserRouter>
+   <Routes>
+   <Route path="/" element = {<Login/>}/>
+    <Route path="/otp" element = {<Otp/>}/>
+    <Route path='/test' element={<Test/>}/>
+    <Route path='/questions' element={<Easy/>}/>
+    <Route path='/modurate' element={<Modurate/>}/>
+    <Route path='/advance' element={<Advance/>}/>
+   </Routes>
+   </BrowserRouter>
+   </>
   );
 }
 
