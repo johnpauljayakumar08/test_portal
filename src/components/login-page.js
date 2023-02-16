@@ -163,13 +163,44 @@ export default function Login() {
                             </div>
                             <div className='row mt-5 '>
                                 <div className='col-lg-2 mt-2 text-center'>
-                                    <h5>CounsellorName:</h5>
+                                    <h5>Counsellor Name:</h5>
                                 </div>
                                 <div className='col-lg-4 text-center'>
-                                    <input type='text' name='counsellorname' id='counsellorname' classname='box form-control' />
+                                <select name="counsellorname" id="counsellorname">
+                                    <option value="CHERIN SANGEETHA">CHERIN SANGEETHA</option>
+                                    <option value="RISHIVARMAN">RISHIVARMAN</option>
+                                    <option value="SURESHKUMAR">SURESHKUMAR</option>
+                                    <option value="BALACHANDAR">BALACHANDAR</option>
+                                    <option value="KARTHEESWARAN">KARTHEESWARAN</option>
+                                    <option value="GANESHPRASATH">GANESHPRASATH</option>
+                                    <option value="A.K.ARAVIND">A.K.ARAVIND</option>
+                                    <option value="MOHAMED MUSTHAFA">MOHAMED MUSTHAFA</option>
+                                    <option value="NOORUL AMEEN">NOORUL AMEEN</option>
+                                    <option value="EBENEZER HOUSMAN">EBENEZER HOUSMAN</option>
+                                    <option value="SWATHIKA">SWATHIKA</option>
+                                    <option value="SAMUEL PONNURAJ">SAMUEL PONNURAJ</option>
+                                    <option value="SURIYAPRIYA">SURIYAPRIYA</option>
+                                    <option value="KALAIVANI S">KALAIVANI S</option>
+                                    <option value="SRIVARSHINIPRIYA">SRIVARSHINIPRIYA</option>
+                                    <option value="SRIDHAR S">SRIDHAR S</option>
+                                    <option value="JOTHIKA">JOTHIKA</option>
+                                    <option value="GOMATHI">GOMATHI</option>
+                                    <option value="KAAVIYA SREE">KAAVIYA SREE</option>
+                                    <option value="DIVYA J">DIVYA J</option>
+                                    <option value="HARIHARAN M">HARIHARAN M</option>
+                                    <option value="KEERTHANA K">KEERTHANA K</option>
+                                    <option value="SUKUMAR M">SUKUMAR M</option>
+                                    <option value="SIVA RANJITH G">SIVA RANJITH G</option>
+                                    <option value="HARIHARAN R">HARIHARAN R</option>
+                                    <option value="ABINESH S">ABINESH S</option>
+                                    <option value="ANITHA M">ANITHA M</option>
+                                    <option value="PRADHAP MANOHARAN">PRADHAP MANOHARAN</option>
+                                    <option value="SANJEEV R">SANJEEV R</option>
+                                </select>
+                                    {/* <input type='text' name='counsellorname' id='counsellorname' classname='box form-control' /> */}
                                 </div>
                                 <div className='col-lg-2 mt-2 text-center'>
-                                    <h5>AboutInstitute:</h5>
+                                    <h5>About Institute:</h5>
                                 </div>
                                 <div className='col-lg-4 text-center'>
                                     <input type='text' name='institute' id='institute' classname='box form-control' />

@@ -7,8 +7,8 @@ export function Modurate(){
 		{
 			questionText: 'The full form of CSS is:',
 			answerOptions: [
-				{ answerText: 'Cascading Style Sheets', isCorrect: false },
-				{ answerText: 'Coloured Special Sheets', isCorrect: true },
+				{ answerText: 'Cascading Style Sheets', isCorrect: true },
+				{ answerText: 'Coloured Special Sheets', isCorrect: false },
 				{ answerText: 'Color and Style Sheets', isCorrect: false },
 				{ answerText: 'None of the Above', isCorrect: false },
 			],
@@ -38,7 +38,7 @@ export function Modurate(){
 				{ answerText: '4', isCorrect: false },
 				{ answerText: '6', isCorrect: false },
 				{ answerText: '3', isCorrect: true },
-			],
+			],b
 		},
 	];
 
