@@ -17,15 +17,16 @@ export default function Login() {
         var value = { headers: { "enctype": "multipart/form-data" } };
 
 
-        var firstname = document.getElementById("candidatename").value;
-        var lastname = document.getElementById("phoneno").value;
+        var firstname = document.getElementById("firstName").value;
+        var lastname = document.getElementById("lastName").value;
         var email = document.getElementById("email").value;
-        var phoneno = document.getElementById("email").value;
-        var counsellorname = document.getElementById("email").value;
-        var aboutinstitute = document.getElementById("email").value;
-        var nativecity = document.getElementById("email").value;
-        var recidencecity = document.getElementById("email").value;
-
+        var phoneno = document.getElementById("phoneNo").value;
+        var counsellorname = document.getElementById("counsellorName").value;
+        var aboutinstitute = document.getElementById("aboutInstitute").value;
+        var nativecity = document.getElementById("nativeCity").value;
+        var recidencecity = document.getElementById("residenceCity").value;
+        var degree = document.getElementById("degree").value;
+        var employeeStatus = document.getElementById("employeeStatus").value;
 
         if (firstname === '' || firstname === null) {
             alert("Enter your First Name");
@@ -40,7 +41,7 @@ export default function Login() {
             alert("Enter your phoneno");
         }
         else if (counsellorname === '' || counsellorname === null) {
-            alert("Enter your counsellorname");
+            alert("select your counsellorname");
         }
         else if (aboutinstitute === '' || aboutinstitute === null) {
             alert("Enter your aboutinstitute");
@@ -51,8 +52,14 @@ export default function Login() {
         else if (recidencecity === '' || recidencecity === null) {
             alert("Enter your recidencecity");
         }
+        else if (degree === '' || degree === null) {
+            alert("Enter your degree");
+        }
+        else if (employeeStatus === '' || employeeStatus === null) {
+            alert("Select your employeeStatus");
+        }
         else {
-            await axios.post('http://localhost:3002/add', key, value)
+            await axios.post('http://192.168.253.177:8080/kgm/user/insert ', key, value)
                 .then(function (res) {
                     if (res.data.status === 'error') {
                         alert('error');
@@ -138,13 +145,13 @@ export default function Login() {
                                     <h5>FirstName:</h5>
                                 </div>
                                 <div className='col-lg-4 text-center'>
-                                    <input type='text' name='firstname' id='firstname' classname='box form-control' />
+                                    <input type='text' name='firstName' id='firstName' classname='box form-control' />
                                 </div>
                                 <div className='col-lg-2 mt-2 text-center'>
                                     <h5>LastName:</h5>
                                 </div>
                                 <div className='col-lg-4 text-center'>
-                                    <input type='text' name='lastname' id='lastname' classname='box form-control' />
+                                    <input type='text' name='lastName' id='lastName' classname='box form-control' />
                                 </div>
                             </div>
                             <div className='row mt-5 '>
@@ -158,7 +165,7 @@ export default function Login() {
                                     <h5>PhoneNo:</h5>
                                 </div>
                                 <div className='col-lg-4 text-center'>
-                                    <input type='text' name='phoneno' id='phoneno' classname='box form-control' />
+                                    <input type='text' name='phoneNo' id='phoneNo' classname='box form-control' />
                                 </div>
                             </div>
                             <div className='row mt-5 '>
@@ -166,7 +173,8 @@ export default function Login() {
                                     <h5>Counsellor Name:</h5>
                                 </div>
                                 <div className='col-lg-4 text-center'>
-                                <select name="counsellorname" id="counsellorname">
+                                <select name="counsellorName" id="counsellorName">
+                                <option value="">Select the Counsellor</option>
                                     <option value="CHERIN SANGEETHA">CHERIN SANGEETHA</option>
                                     <option value="RISHIVARMAN">RISHIVARMAN</option>
                                     <option value="SURESHKUMAR">SURESHKUMAR</option>
@@ -203,7 +211,7 @@ export default function Login() {
                                     <h5>About Institute:</h5>
                                 </div>
                                 <div className='col-lg-4 text-center'>
-                                    <input type='text' name='institute' id='institute' classname='box form-control' />
+                                    <input type='text' name='aboutInstitute' id='aboutInstitute' classname='box form-control' />
                                 </div>
                             </div>
                             <div className='row mt-5 '>
@@ -211,13 +219,13 @@ export default function Login() {
                                     <h5>NativeCity:</h5>
                                 </div>
                                 <div className='col-lg-4 text-center'>
-                                    <input type='text' name='nativecity' id='nativecity' classname='box form-control' />
+                                    <input type='text' name='nativeCity' id='nativeCity' classname='box form-control' />
                                 </div>
                                 <div className='col-lg-2 mt-2 text-center'>
                                     <h5>ResidenceCity:</h5>
                                 </div>
                                 <div className='col-lg-4 text-center'>
-                                    <input type='text' name='recidencecity' id='recidencecity' classname='box form-control' />
+                                    <input type='text' name='residenceCity' id='residenceCity' classname='box form-control' />
                                 </div>
                             </div>
                             <div className='row mt-5 '>
@@ -231,20 +239,18 @@ export default function Login() {
                                     <h5>EmployeStatus:</h5>
                                 </div>
                                 <div className='col-lg-4 text-center'>
-                                    <div class="dropdown">
-                                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle='dropdown' id="dropdownMenuButton" aria-expanded="false">Dropdown button</button>
-                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <li class="dropdown-item">YES</li>
-                                                <li class="dropdown-item">NO</li>
-                                            </ul>
-                                    </div>
+                                    <select name="employeeStatus" id="employeeStatus">
+                                        <option value="">Select the option</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
                                 </div>
                             </div>
                             <div className='row mt-5'>
                                 <div className='col-lg-5'></div>
                                 <div className='col-lg-2'>
-                                <Link to="/otp">
-                                    <button type='submit' className='col-lg-12 btn btn-primary' value='submit' name='submit'>Submit</button></Link>
+                                
+                                    <button type='submit' className='col-lg-12 btn btn-primary' value='submit' name='submit'>Submit</button>
                                 </div>
                                 <div className='col-lg-5'></div>
                             </div>

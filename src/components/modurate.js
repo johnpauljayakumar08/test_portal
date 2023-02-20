@@ -38,7 +38,7 @@ export function Modurate(){
 				{ answerText: '4', isCorrect: false },
 				{ answerText: '6', isCorrect: false },
 				{ answerText: '3', isCorrect: true },
-			],b
+			],
 		},
 	];
 
