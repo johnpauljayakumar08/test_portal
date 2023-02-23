@@ -19,8 +19,8 @@ function App() {
    <Route path="/" element = {<Login/>}/>
     <Route path="/otp" element = {<Otp/>}/>
     <Route path='/test' element={<Test/>}/>
-    <Route path='/questions' element={<Easy/>}/>
-    <Route path='/modurate' element={<Modurate/>}/>
+    <Route path='/questions' element={[<Dashnav/>,<Easy/>]}/>
+    <Route path='/modurate' element={[<Dashnav/>,<Modurate/>]}/>
     <Route path='/advance' element={<Advance/>}/>
     <Route path='/stafflogin' element={<Stafflogin/>}/>
     <Route path='/communicationstaff' element={[<Dashnav/>,<Katresult/>]}/>
