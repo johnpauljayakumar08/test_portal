@@ -10,6 +10,16 @@ import { Link } from 'react-router-dom';
 
 import axios from 'axios';
 export default function Login() { 
+    
+    function phone(){
+        var phoneno = document.getElementById("phoneNo").value;
+        var patten = /^\d{10}$/;
+         if(phoneno.match(patten)){
+            alert("enter the valid number")
+        }
+
+    }
+
     const handelsubmit = async (event) => {
     event.preventDefault();
   
@@ -25,6 +35,14 @@ export default function Login() {
     var recidencecity = document.getElementById("residenceCity").value;
     var degree = document.getElementById("degree").value;
     var employeeStatus = document.getElementById("employeeStatus").value;
+    function phone(){
+        var phoneno = document.getElementById("phoneNo").value;
+        var patten = /^\d{10}$/;
+         if(phoneno.match(patten)){
+            alert("enter the valid number")
+        }
+
+    }
     
     if (firstname === '' || firstname === null) {
         alert("Enter your First Name");
@@ -51,21 +69,22 @@ export default function Login() {
         alert("Enter your recidencecity");
     }
     else if (degree === '' || degree === null) {
-        alert("Enter your recidencecity");
+        alert("Enter your degree");
     }
     else if (employeeStatus === '' || employeeStatus === null) {
-        alert("Enter your recidencecity");
+        alert("Enter your employeeStatus");
     }
     else {
        await  axios.post("http://192.168.253.177:8080/kgm/user/insert", {"firstName":firstname,"lastName":lastname,"email":email,"phoneNo":phoneno,"counsellorName":counsellorname,"aboutInstitute":aboutinstitute,"nativeCity":nativecity,"residenceCity":recidencecity,"degree":degree,"employeeStatus":employeeStatus})
                 .then(function (res) {
-                    if (res.data.setResponseMsg === 'error') {
+                    if (res.data.responseMsg === 'error') {
                         alert("Error");
                         window.location.reload();
                     }
-                    else if (res.data.setResponseMsg === 'success') {
+                    else if (res.data.responseMsg === 'success') {
                         alert('Data inserted');
-                        window.location.href = "/questions";
+                        const user_registration_details_id = localStorage.getItem('user_registration_details_id');
+                        window.location.href = `/questions/${user_registration_details_id}`;
                     }
                 })
                 .catch(function (err) {
@@ -218,7 +237,7 @@ export default function Login() {
                                     <h5>Phone No:</h5>
                                 </div>
                                 <div className='col-lg-4 text-center'>
-                                    <input type='text' name='phoneNo' id='phoneNo' classname='box form-control'   />
+                                    <input type='text' name='phoneNo' id='phoneNo' classname='box form-control' onChange={phone}   />
                                 </div>
                             </div>
                             <div className='row mt-5 '>
@@ -303,7 +322,7 @@ export default function Login() {
                                 <div className='col-lg-5'></div>
                                 <div className='col-lg-2'>
                                 
-                                    <button type='submit' className='col-lg-12 btn btn-primary' value='submit' name='submit'>Submit</button>
+                                    <button type="submit" className='col-lg-12 btn btn-primary' value='submit' name='submit'>Submit</button>
                                 </div>
                                 <div className='col-lg-5'></div>
                             </div>

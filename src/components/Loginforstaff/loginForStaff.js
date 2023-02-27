@@ -13,61 +13,64 @@ export default function Stafflogin() {
 
     const handelsubmit = async (event) => {
         event.preventDefault();
-        var key = new FormData(event.target);
-        var value = { headers: { "enctype": "multipart/form-data" } };
+       
+       
 
 
-        var firstname = document.getElementById("candidatename").value;
-        var lastname = document.getElementById("phoneno").value;
+        
         var email = document.getElementById("email").value;
-        var phoneno = document.getElementById("email").value;
-        var counsellorname = document.getElementById("email").value;
-        var aboutinstitute = document.getElementById("email").value;
-        var nativecity = document.getElementById("email").value;
-        var recidencecity = document.getElementById("email").value;
+        
+        var password = document.getElementById("password").value;
+        const user={
+            email:"",
+            password:""
+        }
 
-
-        if (firstname === '' || firstname === null) {
-            alert("Enter your First Name");
+        
+         if (email === '' || email === null) {
+            alert("Enter your username");
         }
-        else if (lastname === '' || lastname === null) {
-            alert(" Enter your Last Name");
-        }
-        else if (email === '' || email === null) {
-            alert("Enter your email");
-        }
-        else if (phoneno === '' || phoneno === null) {
-            alert("Enter your phoneno");
-        }
-        else if (counsellorname === '' || counsellorname === null) {
-            alert("Enter your counsellorname");
-        }
-        else if (aboutinstitute === '' || aboutinstitute === null) {
-            alert("Enter your aboutinstitute");
-        }
-        else if (nativecity === '' || nativecity === null) {
-            alert("Enter your nativecity");
-        }
-        else if (recidencecity === '' || recidencecity === null) {
-            alert("Enter your recidencecity");
+       
+        else if (password === '' || password === null) {
+            alert("Enter your password");
         }
         else {
-            await axios.post('http://localhost:3002/add', key, value)
-                .then(function (res) {
-                    if (res.data.status === 'error') {
-                        alert('error');
+            user.email=email;
+            user.password=password;
+            console.log(user)
+            await axios.post("http://192.168.253.177:8080/kgm/check/trainer",{"email":email,"password":password})
+                .then(function (res){
+                    console.log(res)
+                    if (res.data.responseMsg === 'failure') {
+                        alert('failure');
                         window.location.reload();
                     }
-                    else if (res.data.status === 'Success') {
-                        alert("Inserted");
-                        window.location.href = "./otp";
+                    else if (res.data.responseMsg === 'success') {
+                        alert("success");
+                        window.location.href = "./communicationstaff";
 
                     }
                 })
-                .catch(function (err) {
-                    alert(err);
-                    window.location.reload();
-                })
+            // await fetch("http://192.168.253.177:8080/kgm/check/trainer",{method:"GET",user})
+            //     .then(function (res) {
+            //         console.log(res)
+            //         .then(function (res) {
+            //         console.log(res)
+            //         if (res.data.setResponseMsg === 'failure') {
+            //             alert('failure');
+            //             window.location.reload();
+            //         }
+            //         else if (res.data.setResponseMsg === 'success') {
+            //             alert("success");
+            //             window.location.href = "./communicationstaff";
+
+            //         }
+            //     })
+            //     })
+            //     .catch(function (err) {
+            //         alert(err);
+            //         window.location.reload();
+            //     })
         }
     }
     return (
@@ -115,8 +118,8 @@ export default function Stafflogin() {
                             <div className='row mt-5'>
                                 <div className='col-lg-5'></div>
                                 <div className='col-lg-2'>
-                                <Link to="/result">
-                                    <button type='submit' className='col-lg-12 btn btn-primary' value='submit' name='submit'>Login</button></Link>
+                               
+                                    <button type='submit' className='col-lg-12 btn btn-primary' value='submit' name='submit'>Login</button>
                                 </div>
                                 <div className='col-lg-5'></div>
                             </div>

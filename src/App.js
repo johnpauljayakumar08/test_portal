@@ -11,6 +11,8 @@ import { Header } from './components/header';
 import Stafflogin from './components/Loginforstaff/loginForStaff';
 import Katresult from './components/CommunicationResult/communicationresult';
 import { Dashnav } from './components/Dashboardnav/dashnav';
+import {Check} from './components/CommunicationResult/communicationnn';
+import { Results } from './components/easy';
 function App() {
   return (
    <>
@@ -19,11 +21,14 @@ function App() {
    <Route path="/" element = {<Login/>}/>
     <Route path="/otp" element = {<Otp/>}/>
     <Route path='/test' element={<Test/>}/>
-    <Route path='/questions' element={[<Dashnav/>,<Easy/>]}/>
+    <Route path='/questions/:user_registration_details_id' element={[<Dashnav/>,<Easy/>]}/>
     <Route path='/modurate' element={[<Dashnav/>,<Modurate/>]}/>
     <Route path='/advance' element={<Advance/>}/>
     <Route path='/stafflogin' element={<Stafflogin/>}/>
     <Route path='/communicationstaff' element={[<Dashnav/>,<Katresult/>]}/>
+    <Route path='/aggrid' element={[<Dashnav/>,<Check/>]}/>
+      
+				
    </Routes>
    </BrowserRouter>
    </>

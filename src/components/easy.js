@@ -3,240 +3,42 @@ import React,{useState,useEffect} from "react";
 import axios from "axios";
 
 export function Easy(){
-	const[course,setCourse]=useState([])
-  useEffect(()=>{
-		fetchQuestion();
-  	},[]);
-  	const fetchQuestion = () =>{
-		axios.get('http://192.168.253.177:8080/kgm/get/questions')
-		.then((res)=>{
-			console.log(res);
-			setCourse(res.data.jdata)
-		})
-		.catch((err)=>{
-			console.log(err);
-		});
-	};
-      
-    const check = [
-		{
-		  questionText: "It is being given that (232 + 1) is completely divisible by a whole number. Which of the following numbers is completely divisible by this number?",
-		  answerOptions: [
-			{
-			  answerText: "(216 + 1)",
-			  isCorrect: false
-			},
-			{
-			  answerText: "(216 - 1)",
-			  isCorrect: false
-			},
-			{
-			  answerText: "(7 x 223)",
-			  isCorrect: false
-			},
-			{
-			  answerText: "(296 + 1)",
-			  isCorrect: true
-			}
-		  ]
-		},
-		{
-		  questionText: "What is the unit digit in {(6374)1793 x (625)317 x (341491)}?",
-		  answerOptions: [
-			{
-			  answerText: "0",
-			  isCorrect: true
-			},
-			{
-			  answerText: "2",
-			  isCorrect: false
-			},
-			{
-			  answerText: "3",
-			  isCorrect: false
-			},
-			{
-			  answerText: "5",
-			  isCorrect: false
-			}
-		  ]
-		},
-		{
-		  questionText: "The largest 4 digit number exactly divisible by 88 is:",
-		  answerOptions: [
-			{
-			  answerText: "9944",
-			  isCorrect: true
-			},
-			{
-			  answerText: "9768",
-			  isCorrect: false
-			},
-			{
-			  answerText: "9988",
-			  isCorrect: false
-			},
-			{
-			  answerText: "8888",
-			  isCorrect: false
-			}
-		  ]
-		},
-		{
-		  questionText: "What least number must be added to 1056, so that the sum is completely divisible by 23 ?",
-		  answerOptions: [
-			{
-			  answerText: "2",
-			  isCorrect: true
-			},
-			{
-			  answerText: "3",
-			  isCorrect: false
-			},
-			{
-			  answerText: "18",
-			  isCorrect: false
-			},
-			{
-			  answerText: "21",
-			  isCorrect: false
-			}
-		  ]
-		},
-		{
-		  questionText: "Which one of the following is not a prime number?",
-		  answerOptions: [
-			{
-			  answerText: "31",
-			  isCorrect: false
-			},
-			{
-			  answerText: "61",
-			  isCorrect: false
-			},
-			{
-			  answerText: "71",
-			  isCorrect: false
-			},
-			{
-			  answerText: "91",
-			  isCorrect: true
-			}
-		  ]
-		}
-	  ]
-    const questions = [
-		{
-		  questionText: "It is being given that (232 + 1) is completely divisible by a whole number. Which of the following numbers is completely divisible by this number?",
-		  answerOptions: [
-			{
-			  answerText: "(216 + 1)",
-			  isCorrect: false
-			},
-			{
-			  answerText: "(216 - 1)",
-			  isCorrect: false
-			},
-			{
-			  answerText: "(7 x 223)",
-			  isCorrect: false
-			},
-			{
-			  answerText: "(296 + 1)",
-			  isCorrect: true
-			}
-		  ]
-		},
-		{
-		  questionText: "What is the unit digit in {(6374)1793 x (625)317 x (341491)}?",
-		  answerOptions: [
-			{
-			  answerText: "0",
-			  isCorrect: true
-			},
-			{
-			  answerText: "2",
-			  isCorrect: false
-			},
-			{
-			  answerText: "3",
-			  isCorrect: false
-			},
-			{
-			  answerText: "5",
-			  isCorrect: false
-			}
-		  ]
-		},
-		{
-		  questionText: "The largest 4 digit number exactly divisible by 88 is:",
-		  answerOptions: [
-			{
-			  answerText: "9944",
-			  isCorrect: true
-			},
-			{
-			  answerText: "9768",
-			  isCorrect: false
-			},
-			{
-			  answerText: "9988",
-			  isCorrect: false
-			},
-			{
-			  answerText: "8888",
-			  isCorrect: false
-			}
-		  ]
-		},
-		{
-		  questionText: "What least number must be added to 1056, so that the sum is completely divisible by 23 ?",
-		  answerOptions: [
-			{
-			  answerText: "2",
-			  isCorrect: true
-			},
-			{
-			  answerText: "3",
-			  isCorrect: false
-			},
-			{
-			  answerText: "18",
-			  isCorrect: false
-			},
-			{
-			  answerText: "21",
-			  isCorrect: false
-			}
-		  ]
-		},
-		{
-		  questionText: "Which one of the following is not a prime number?",
-		  answerOptions: [
-			{
-			  answerText: "31",
-			  isCorrect: false
-			},
-			{
-			  answerText: "61",
-			  isCorrect: false
-			},
-			{
-			  answerText: "71",
-			  isCorrect: false
-			},
-			{
-			  answerText: "91",
-			  isCorrect: true
-			}
-		  ]
-		}
-	  ];
+// 	const[course,setCourse]=useState([])
+//   useEffect(()=>{
+// 		fetchQuestion();
+//   	},[]);
+//   	const fetchQuestion = () =>{
+// 		axios.get('http://192.168.253.177:8080/kgm/get/questions')
+// 		.then((res)=>{
+// 			console.log(res);
+// 			setCourse(res.data.jdata)
+// 			 console.log(course)
+// 		})
+// 		.catch((err)=>{
+// 			console.log(err);
+// 		});
+// 	};
+		const [products, setProducts] = useState([]);
+		useEffect(()=>{
+			axios.get("http://192.168.253.177:8080/kgm/get/n1/questions")
 
+			.then((res) => {
+				console.log(res)
+				setProducts(res.data.jData)
+				console.log(products)
+				
+			})
+			
+				
+		},[]);
+
+    
+
+  
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
-
+	
 	const handleAnswerOptionClick = (isCorrect) => {
 		if (isCorrect) {
 			setScore(score + 1);
@@ -246,31 +48,59 @@ export function Easy(){
             }
 			
 			
+			
 		}
+		
 
 		const nextQuestion = currentQuestion + 1;
-		if (nextQuestion < questions.length) {
+		if (nextQuestion < products.length) {
 			setCurrentQuestion(nextQuestion);
 		} else {
 			setShowScore(true);
 		}
 	};
+	if(products.length==0){
+		return <p>Loading... </p>
+		
+
+	}
+	const BasicApptitude=score*50;
+	const IntermediateApptitude=score*0
+	const AdvanceApptitude=score*0
+	const handelfinish = () =>{
+		axios.post("http://192.168.253.177:8080/kgm/insert/marks",{"studentsProgressDetailsId":1,
+		"numericBasic":BasicApptitude,
+		"numericIntermediate":IntermediateApptitude,
+		"numericAdvanced":AdvanceApptitude,
+		"verbalBasic":null,
+		"verbalIntermediate":null,
+		"verbalAdvanced":null,
+		"communication":null,
+		"updatedBy":null})
+	}
     return(
+
         <div className='app p-5'>
 			{showScore ? (
-				<div className='score-section'>
-					You scored {score} out of {questions.length}
+				<div className='text-white'>
+					 
+					{/* You scored {score} out of {products.length} */}
+					<h1>Thank You!..</h1>
+					<h3>Basic Apptitude score :{BasicApptitude}</h3>
+					<h3>Intermediate Apptitude score: {IntermediateApptitude}</h3>
+					<h3>Advance Apptitude score : {AdvanceApptitude}</h3>
+					<input type="button" onClick={handelfinish}  value="Finish" className="btn btn-success"/>
 				</div>
 			) : (
 				<>
 					<div className='question-section'>
 						<div className='question-count'>
-							<span>Question {currentQuestion + 1}</span>
+							{/* <span>Question {questions + 1}</span> */}
 						</div>
-						<div className='question-text'>{questions[currentQuestion].questionText}</div>
+						<div className='question-text'>{products[currentQuestion].questionText}</div>
 					</div>
 					<div className='answer-section'>
-						{questions[currentQuestion].answerOptions.map((answerOption) => (
+						{products[currentQuestion].answerOptions.map((answerOption) => (
 							<button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
 						))}
 					</div>
