@@ -2,24 +2,9 @@ import React,{useState,useEffect} from "react";
 
 import axios from "axios";
 import { useParams } from 'react-router-dom';
-export function Easy(){
+export function Intermediatenumerical(){
 	const { studentsProgressDetailsId } = useParams();
-// 	const[course,setCourse]=useState([])
-//   useEffect(()=>{
-// 		fetchQuestion();
-//   	},[]);
-//   	const fetchQuestion = () =>{
-// 		axios.get('http://192.168.253.177:8080/kgm/get/questions')
-// 		.then((res)=>{
-// 			console.log(res);
-// 			setCourse(res.data.jdata)
-// 			 console.log(course)
-// 		})
-// 		.catch((err)=>{
-// 			console.log(err);
-// 		});
-// 	};
-		const [products, setProducts] = useState([]);
+	const [products, setProducts] = useState([]);
 		useEffect(()=>{
 			axios.get("http://192.168.253.177:8080/kgm/get/n1/questions")
 
@@ -65,8 +50,8 @@ export function Easy(){
 		
 
 	}
-	const BasicApptitude=score*50;
-	const IntermediateApptitude=score*0
+	const BasicApptitude=100;
+	const IntermediateApptitude=score*50;
 	const AdvanceApptitude=score*0
 	const handelfinish = () =>{
 		axios.post("http://192.168.253.177:8080/kgm/insert/marks",{"studentsProgressDetailsId":studentsProgressDetailsId,
@@ -118,29 +103,7 @@ export function Easy(){
 				</>
 			)}
 		</div>
-		// <div>
-		// 	{
-		// 		course.map((value,index)=>(
-		// 			<>
-					
-		// 			<h3>{value.Question}</h3>
-		// 			<button>{value.OptionA}</button>
-		// 			<button>{value.OptionB}</button>
-		// 			<button>{value.OptionC}</button>
-		// 			<button>{value.OptionD}</button>
-		// 			</>
-					
-		// 		))
-		// 	}
-		// </div>
-		// <>
-		// {
-		// 	course.map((v,i)=>(
-
-		// 		<h1>{v.Question}</h1>
-		// 	))
-		// }
-		// </>
+		
 
     );
 }

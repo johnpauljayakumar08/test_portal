@@ -91,64 +91,11 @@ export default function Login() {
                     alert(err);
                     window.location.reload();
                 })
-    //     axios.post('http://192.168.253.177:8080/kgm/user/insert', {
-    //   key,headers: {
-    //     'Content-Type': 'application/json',
-    //   }  
-      
-    // })
-    // .then(function (res) {
-    //     if (res.data.setResponseMsg === 'error') {
-    //         alert("Error");
-    //         window.location.reload();
-    //     }
-    //     else if (res.data.setResponseMsg === 'success') {
-    //         alert('Data inserted');
-    //         window.location.href = "/questions";
-    //     }
-    // })
+  
     }
 }
 
 
-//     const [formData, setFormData] = useState({
-//         firstName: '',
-//         lastName: '',
-//         email: ''
-//       });
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     fetch('http://192.168.253.177:8080/kgm/user/insert', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//       body: JSON.stringify(formData),
-//     })
-//       .then((response) => response.json())
-//       .then((data) => {
-//         console.log('Success:', data);
-//         alert("inserted")
-//       })
-//       .catch((error) => {
-//         console.error('Error:', error);
-//         alert(error)
-//       });
-//   };
-
-//   const handleChange = (e) => {
-//     setFormData({ ...formData, [e.target.firstName]: e.target.value },
-//         { ...formData, [e.target.lastName]: e.target.value },
-//         { ...formData, [e.target.email]: e.target.value },
-//         { ...formData, [e.target.phoneNo]: e.target.value },
-//         { ...formData, [e.target.counsellorName]: e.target.value },
-//         { ...formData, [e.target.aboutInstitute]: e.target.value },
-//         { ...formData, [e.target.nativeCity]: e.target.value },
-//         { ...formData, [e.target.residenceCity]: e.target.value },
-//         { ...formData, [e.target.degree]: e.target.value },
-//         { ...formData, [e.target.employeeStatus]: e.target.value });
-//   };
     return (
         <>
             <div className='container-fluid mt-3'>
